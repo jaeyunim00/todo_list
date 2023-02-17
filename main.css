@@ -1,5 +1,71 @@
 @import url(reset.css);
 
+:root {
+  --main-post-color: #ffb703;
+  --main-post-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.list {
+  width: 200px;
+  height: 100px;
+  background-color: var(--main-post-color);
+  border: 1px solid black;
+  margin: 15px;
+  box-shadow: var(--main-post-shadow);
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: url(imgs/wood-board-background.jpg);
+  background-size: cover;
+}
+
+div.left {
+  width: 70%;
+  height: 100%;
+  float: left;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* dev */
+  border: 5px solid black;
+}
+div.right {
+  width: 30%;
+  height: 100%;
+  float: right;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* dev */
+  border: 5px solid black;
+}
+
 .container {
-  background-color: aqua;
+  background-color: var(--main-post-color);
+  padding: 50px;
+  box-shadow: var(--main-post-shadow);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+}
+
+.container div {
+  padding: 10px;
+}
+
+#current_date {
+  font-size: 35 px;
+}
+
+#current_time {
+  font-size: 70px;
 }

@@ -1,6 +1,9 @@
 const current_date = document.getElementById("current_date");
 const current_time = document.getElementById("current_time");
 
+const user_name = document.querySelector(".user_name");
+const user_name_input = user_name.querySelector("input");
+
 function getDate() {
   // date obj
   const date = new Date();
@@ -22,3 +25,9 @@ function getDate() {
 
 getDate();
 setInterval(getDate, 1000);
+
+function onLogin() {
+  console.log(user_name_input.value);
+}
+
+user_name_input.addEventListener("submit", onLogin());
