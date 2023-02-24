@@ -1,15 +1,21 @@
 @import url(reset.css);
+@import url("https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300;400;500;600&display=swap");
+@import url(magic.css);
 
 :root {
-  --main-post-color: #ffb703;
-  --main-post-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  --main-post-color: #e9c46a;
+  --main-post-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  --greet-font-size: 20px;
+}
+
+#hidden {
+  opacity: 0;
 }
 
 .list {
   width: 200px;
   height: 100px;
   background-color: var(--main-post-color);
-  border: 1px solid black;
   margin: 15px;
   box-shadow: var(--main-post-shadow);
 }
@@ -19,6 +25,7 @@ body {
   height: 100vh;
   background-image: url(imgs/wood-board-background.jpg);
   background-size: cover;
+  font-family: "Shantell Sans", cursive;
 }
 
 div.left {
@@ -30,7 +37,7 @@ div.left {
   justify-content: center;
   align-items: center;
   /* dev */
-  border: 5px solid black;
+  /* border: 5px solid black; */
 }
 div.right {
   width: 30%;
@@ -42,7 +49,7 @@ div.right {
   justify-content: center;
   align-items: center;
   /* dev */
-  border: 5px solid black;
+  /* border: 5px solid black; */
 }
 
 .container {
@@ -68,4 +75,46 @@ div.right {
 
 #current_time {
   font-size: 70px;
+}
+
+.login {
+  font-size: var(--greet-font-size);
+  position: relative;
+}
+
+.login form {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+animate__rollIn .login form span,
+.login form .login_name,
+#greet {
+  box-sizing: border-box;
+  font-size: var(--greet-font-size);
+  width: 210px;
+  height: 30px;
+  padding: 5px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin: 5px 0px;
+}
+
+.login form .login_name {
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
+}
+
+.login form input:last-child {
+  background-color: #e76f51;
+  width: 100px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  box-shadow: var(--main-post-shadow);
 }

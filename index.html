@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="yourpath/magic.min.css" />
     <link rel="stylesheet" href="main.css" />
     <script defer src="main.js"></script>
     <title>Document</title>
@@ -13,12 +14,23 @@
       <div class="container">
         <div id="current_date"></div>
         <div id="current_time"></div>
-        <div class="user_name">
-          <span>What's your name?</span>
-          <input type="text" />
-          <button>LOGIN</button>
+        <div class="login">
+          <form method="get">
+            <span>What's your name?</span>
+            <input
+              type="text"
+              class="login_name"
+              style="font-family: Shantell Sans, cursive"
+            />
+            <input
+              type="submit"
+              value="LOGIN"
+              style="font-family: Shantell Sans, cursive"
+            />
+          </form>
+          <h1 id="greet" class="hidden"></h1>
         </div>
-        <div class="todo_list">
+        <div class="todo_list hidden">
           <span>type your todo</span>
           <input type="text" />
         </div>
