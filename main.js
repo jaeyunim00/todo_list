@@ -19,18 +19,22 @@ function getDate() {
   const month = date.getMonth();
   const day = date.getDate();
 
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  const seconds = date.getSeconds();
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  const seconds = String(date.getSeconds()).padStart(2, "0");
 
   current_date.innerHTML = year + "/" + month + "/" + day;
-  current_time.innerHTML = hours + ":" + minutes + ":" + seconds;
+
+  if (seconds < 10 || minutes < 10 || hours < 10) {
+    current_time.innerHTML = `${hours}:${minutes}:${seconds}`;
+  } else {
+    current_time.innerHTML = hours + ":" + minutes + ":" + seconds;
+  }
 }
 getDate();
 setInterval(getDate, 1000);
 
 //LOGIN
-
 function myFunction() {
   login_form.classList.add("magictime", "openDownRightOut");
   login.classList.add("magictime", "openDownRightOut");

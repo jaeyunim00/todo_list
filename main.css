@@ -9,7 +9,7 @@
 }
 
 #hidden {
-  opacity: 0;
+  display: none;
 }
 
 .list {
@@ -79,21 +79,26 @@ div.right {
 
 .login {
   font-size: var(--greet-font-size);
-  position: relative;
+}
+
+.login h1 {
+  width: 100%;
+  height: 118px;
+  display: flex;
+  align-items: center;
 }
 
 .login form {
-  opacity: 1;
-  transition: opacity 0.5s ease-out;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-animate__rollIn .login form span,
+.login form span,
 .login form .login_name,
-#greet {
+#greet,
+.todos {
   box-sizing: border-box;
   font-size: var(--greet-font-size);
   width: 210px;
@@ -105,7 +110,8 @@ animate__rollIn .login form span,
   margin: 5px 0px;
 }
 
-.login form .login_name {
+.login form .login_name,
+.todos {
   padding-bottom: 10px;
   border-bottom: 2px solid black;
 }
@@ -117,4 +123,11 @@ animate__rollIn .login form span,
   border: none;
   outline: none;
   box-shadow: var(--main-post-shadow);
+}
+
+.todo_list {
+  font-size: var(--greet-font-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
