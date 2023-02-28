@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="yourpath/magic.min.css" />
     <link rel="stylesheet" href="main.css" />
+    <script defer src="weather.js"></script>
     <script defer src="main.js"></script>
     <title>Document</title>
   </head>
@@ -21,6 +22,7 @@
               type="text"
               class="login_name"
               style="font-family: Shantell Sans, cursive"
+              required
             />
             <input
               type="submit"
@@ -32,19 +34,23 @@
         </div>
         <div class="todo_list hidden">
           <span>type your plan</span>
-          <input
-            type="text"
-            class="todos"
-            style="font-family: Shantell Sans, cursive"
-          />
+          <form method="get">
+            <input
+              type="text"
+              class="todos"
+              style="font-family: Shantell Sans, cursive"
+              required
+            />
+          </form>
         </div>
       </div>
     </div>
     <div class="right">
-      <div class="list"></div>
-      <div class="list"></div>
-      <div class="list"></div>
-      <div class="list"></div>
+      <div class="right_box"></div>
+      <div class="weather">
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </body>
 </html>

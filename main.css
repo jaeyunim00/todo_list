@@ -4,8 +4,13 @@
 
 :root {
   --main-post-color: #e9c46a;
-  --main-post-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+  --sub-post-color: #f4a261;
+  --main-post-shadow: rgba(0, 0, 0, 0.5) 2.4px 2.4px 3.2px;
   --greet-font-size: 20px;
+}
+
+input {
+  padding: 0;
 }
 
 #hidden {
@@ -14,10 +19,13 @@
 
 .list {
   width: 200px;
-  height: 100px;
-  background-color: var(--main-post-color);
+  height: 30px;
+  background-color: var(--sub-post-color);
   margin: 15px;
   box-shadow: var(--main-post-shadow);
+  padding: 20px;
+  display: flex;
+  align-items: center;
 }
 
 body {
@@ -26,6 +34,8 @@ body {
   background-image: url(imgs/wood-board-background.jpg);
   background-size: cover;
   font-family: "Shantell Sans", cursive;
+  display: flex;
+  align-items: center;
 }
 
 div.left {
@@ -39,17 +49,18 @@ div.left {
   /* dev */
   /* border: 5px solid black; */
 }
-div.right {
-  width: 30%;
-  height: 100%;
-  float: right;
+div.right_box {
+  width: 400px;
+  height: 500px;
+  overflow-y: scroll;
   box-sizing: border-box;
+  background-color: var(--main-post-color);
+  box-shadow: var(--main-post-shadow);
+  float: right;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  /* dev */
-  /* border: 5px solid black; */
+  margin-right: 80px;
 }
 
 .container {

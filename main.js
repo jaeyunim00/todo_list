@@ -8,8 +8,21 @@ const login_form = login.querySelector("form");
 const login_form_name = login_form.querySelector(".login_name");
 const login_greet = login.querySelector("#greet");
 
+//CONST LIST
+const right = document.querySelector(".right_box");
+const todo_form = document.querySelector(".todo_list form");
+const todo_input = todo_form.querySelector("input");
+const lists = document.querySelector(".right");
+const list = lists.querySelector(".list span");
+
 //CONST
 const NAME_KEY = "username";
+let todos = new Array();
+
+if (localStorage.getItem("todos") !== null) {
+  let getTodos = localStorage.getItem("todos");
+  todos = JSON.parse(getTodos);
+}
 
 //TIME
 function getDate() {
@@ -52,6 +65,35 @@ function handleLogin(event) {
   login_greet.setAttribute("id", "");
 }
 
+function saveTodos() {
+  localStorage.setItem("todos", JSON.stringify(todos));
+  getTodos = localStorage.getItem("todos");
+  todos = JSON.parse(getTodos);
+}
+
+function deleteTodo() {}
+
+function paintTodo(todo) {
+  const newDiv = document.createElement("div");
+  newDiv.className = "list";
+  // const button = document.createElement("button");
+  // button.innerText = "🔥";
+  // button.addEventListener("click", deleteTodo);
+  newDiv.innerHTML = `<input type="checkbox" name="" id="" /> <span>${todo}</span>`;
+  // newDiv.appendChild(button);
+  right.appendChild(newDiv);
+}
+
+function handleTodo(event) {
+  event.preventDefault();
+  const todo = todo_input.value;
+  todos.push(todo);
+  localStorage.setItem("todos", todos);
+  todo_input.value = "";
+  paintTodo(todo);
+  saveTodos();
+}
+
 const storageUser = localStorage.getItem(NAME_KEY);
 
 if (storageUser === null) {
@@ -63,6 +105,12 @@ if (storageUser === null) {
   login_form.setAttribute("id", "hidden");
 }
 
-console.log(storageUser);
-
 login_form.addEventListener("submit", handleLogin);
+todo_form.addEventListener("submit", handleTodo);
+
+if (todos !== null) {
+  todos.forEach((item) => {
+    paintTodo(item);
+  });
+} else {
+}
